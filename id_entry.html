@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID Kiriting</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Tanlangan Almaz</h2>
+    <div class="selected-item">
+        <img id="selectedImage" class="almaz-icon" alt="Tanlangan Almaz">
+        <p id="selectedText"></p>
+    </div>
+
+    <h2>O‘yin ID-sini kiriting</h2>
+    <input type="text" id="playerID" placeholder="O‘yin ID-ni kiriting">
+    <button onclick="proceedToPayment()">Davom etish</button>
+</div>
+
+<script>
+window.onload = function() {
+    // LocalStorage'dan tanlangan almaz ma'lumotlarini olish
+    let selectedText = localStorage.getItem("selectedText");
+    let selectedImage = localStorage.getItem("selectedImage");
+
+    // Agar localStorage bo'sh bo'lsa, sahifani qayta yuklash
+    if (!selectedText || !selectedImage) {
+        alert("Iltimos, avval almaz tanlang!");
+        window.location.href = "index.html";
+        return;
+    }
+
+    // Ma'lumotlarni sahifaga chiqarish
+    document.getElementById("selectedText").innerText = selectedText;
+    document.getElementById("selectedImage").src = selectedImage;
+};
+
+// To'lov sahifasiga o'tish
+function proceedToPayment() {
+    let playerID = document.getElementById("playerID").value.trim();
+    
+    if (playerID === "") {
+        alert("Iltimos, o‘yin ID-sini kiriting!");
+        return;
+    }
+
+    // ID-ni saqlaymiz
+    localStorage.setItem("playerID", playerID);
+    
+    // To‘lov sahifasiga o‘tish
+    window.location.href = "payment.html";
+}
+</script>
+
+</body>
+</html>

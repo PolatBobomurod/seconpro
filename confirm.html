@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buyurtmani tasdiqlash</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Buyurtmani tasdiqlang</h2>
+        <p><strong>ID:</strong> <span id="confirmID"></span></p>
+        <p><strong>Almaz:</strong> <span id="confirmAlmaz"></span></p>
+        <p><strong>To‘lov:</strong> <span id="confirmPrice"></span></p>
+        <button onclick="goToPayment()">💳 To‘lov qilish</button>
+        <button onclick="window.history.back()">⬅️ Orqaga</button>
+    </div>
+
+    <script>
+        document.getElementById("confirmID").innerText = localStorage.getItem("userID");
+        document.getElementById("confirmAlmaz").innerText = `${localStorage.getItem("almaz")} 💎`;
+        document.getElementById("confirmPrice").innerText = `${localStorage.getItem("price")} so‘m`;
+
+        function goToPayment() {
+            window.location.href = "payment.html";
+        }
+    </script>
+</body>
+</html>

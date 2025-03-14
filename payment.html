@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To‘lov sahifasi</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>To‘lov tafsilotlari</h2>
+        
+        <div class="payment-info">
+            <p><strong>Karta raqami:</strong> 8834 7859 4754 5935 24</p>
+            <p><strong>Ism Familiya:</strong> Eshmat Toshmatov</p>
+            <p><strong>To‘lov summasi:</strong> <span id="paymentAmount">0</span> so‘m</p>
+        </div>
+
+        <form id="uploadForm" enctype="multipart/form-data">
+            <label for="fileInput">Chekni yuklash:</label>
+            <input type="file" id="fileInput" name="file" required>
+            <button type="submit">Chekni yuborish</button>
+        </form>
+
+        <button id="confirmPayment">Sotib olish</button>
+    </div>
+
+    <script>
+        // To‘lov summasini avtomatik chiqarish
+        document.addEventListener("DOMContentLoaded", function () {
+            let storedAmount = localStorage.getItem("selectedAmount");
+            if (storedAmount) {
+                document.getElementById("paymentAmount").innerText = storedAmount;
+            }
+        });
+
+        // Chek yuklash funksiyasi
+        document.getElementById("uploadForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let formData = new FormData();
+            let fileInput = document.getElementById("fileInput");
+
+            if (fileInput.files.length > 0) {
+                formData.append("file", fileInput.files[0]);
+
+                fetch("http://127.0.0.1:8000/upload_check", {
+                    method: "POST",
+                    body: formData
+                })
+                .then(response => response.text())
+                .then(data => alert(data))
+                .catch(error => console.error("Xatolik:", error));
+            } else {
+                alert("Iltimos, fayl tanlang!");
+            }
+        });
+
+        // Sotib olish tugmasi bosilganda
+        document.getElementById("confirmPayment").addEventListener("click", function() {
+            alert("To‘lov tasdiqlandi!");
+        });
+    </script>
+</body>
+</html>
