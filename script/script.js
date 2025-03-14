@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // **Reklama bosilganda index.html sahifasiga yo‘naltirish**
     slides.forEach(slide => {
         slide.addEventListener("click", function() {
-            window.location.href = "index.html";
+            window.location.href = "/html/main.html";
         });
     });
 
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 localStorage.setItem("selectedAmount", price);
                 localStorage.setItem("selectedName", name);
 
-                window.location.href = "id_entry.html";
+                window.location.href = "/html/id_entry.html";
             });
         });
     }
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
 
             localStorage.setItem("userId", userId);
-            window.location.href = "confirm.html";
+            window.location.href = "/html/confirm.html";
         });
     }
 
@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("confirmPayment").addEventListener("click", function() {
             alert("To‘lov muvaffaqiyatli qabul qilindi!");
             localStorage.clear();
-            window.location.href = "index.html";
+            window.location.href = "/html/main.html";
         });
     }
 });

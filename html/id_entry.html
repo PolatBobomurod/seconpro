@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ID Kiriting</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
 
@@ -29,7 +29,7 @@ window.onload = function() {
     // Agar localStorage bo'sh bo'lsa, sahifani qayta yuklash
     if (!selectedText || !selectedImage) {
         alert("Iltimos, avval almaz tanlang!");
-        window.location.href = "index.html";
+        window.location.href = "/html/main.html";
         return;
     }
 
@@ -51,7 +51,7 @@ function proceedToPayment() {
     localStorage.setItem("playerID", playerID);
     
     // To‘lov sahifasiga o‘tish
-    window.location.href = "payment.html";
+    window.location.href = "/html/confirm.html";
 }
 </script>
 

@@ -3,133 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Almaz Tanlash</title>
+    <title>Mini-App</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-<div class="container">
-    <!-- Mobile Legends logotipi -->
-    <img src="images/ml-logo.webp" alt="Mobile Legends" class="ml-logo">
+    <div class="container">
+        <!-- Reklama Slayderi -->
+        <div class="ad-container">
+            <div class="ad-slider">
+                <img src="reklama/1-reklama.jpg" class="ad-slide" alt="Reklama 1">
+                <img src="reklama/2-reklama.webp" class="ad-slide" alt="Reklama 2">
+                <img src="reklama/3-reklama.jpeg" class="ad-slide" alt="Reklama 3">
+            </div>
+        </div>
 
-    <!-- Qo‘shimcha bosilmaydigan tugmalar -->
-    <div class="extra-buttons">
-        <button class="disabled-btn">
-            <img src="images/iconic.webp" class="btn-icon">
-            TEZKOR
-        </button>
-        <button class="disabled-btn">
-            <img src="images/idicon.webp" class="btnnn-icon">
-            ID ORQALI
-        </button>
-    </div>
+        <!-- Telegram tugmalari -->
+        <div class="buttons-container">
+            <!-- MLBB Almaz Faq tugmasi -->
+            <a href="https://t.me/MlbbalmazFaq" class="telegram-button">
+                <img src="images/telegramicon.webp" >
+                <span>Kanalimiz</span>
+            </a>
 
-    <!-- Pastki markaziy tugma -->
-    <div class="center-button">
-        <button class="disabled-btn">
-            <img src="images/comfort.webp" class="btnn-icon">
-            QULAY
-        </button>
-    </div>
+            <!-- Fikr va O‘zib tugmasi -->
+            <a href="https://t.me/Fikrvaotziv" class="telegram-button">
+                <img src="images/group.webp" >
+                <span>Guruhimiz</span>
+            </a>
+        </div>
 
-    <!-- Pastki markaziy tugma -->
-
-    
-    <h2>ALMAZLAR TO'PLAMI</h2>
-    <div class="almaz-container">
-        <button class="almaz-btn" onclick="selectItem(8, '8 almaz - 3 800 so‘m')">
-            <span class="almaz-text">8</span>
-            <span class="almaz-price">3 800 so‘m</span>
-            <img src="images/2-almaz-icon.svg.webp" class="almaz-icon">
-        </button>
-
-        <button class="almaz-btn" onclick="selectItem(43, '43 almaz - 17 140 so‘m')">
-            <span class="almaz-text">43</span>
-            <span class="almaz-price">17 140 so‘m</span>
-            <img src="images/2-almaz-icon.svg.webp" class="almaz-icon">
-        </button>
-
-        <button class="almaz-btn" onclick="selectItem(86, '86 almaz - 20 000 so‘m')">
-            <span class="almaz-text">86</span>
-            <span class="almaz-price">20 000 so‘m</span>
-            <img src="images/3-almaz-icon.svg.webp" class="almaz-icon">
-        </button>
-
-        <button class="almaz-btn" onclick="selectItem(172, '172 almaz - 35 000 so‘m')">
-            <span class="almaz-text">172</span>
-            <span class="almaz-price">35 000 so‘m</span>
-            <img src="images/4-almaz-icon.svg.webp" class="almaz-icon">
-        </button>
-
-        <button class="almaz-btn" onclick="selectItem(343, '343 almaz - 62 500 so‘m')">
-            <span class="almaz-text">343</span>
-            <span class="almaz-price">62 500 so‘m</span>
-            <img src="images/4-almaz-icon.svg.webp" class="almaz-icon">
-        </button>
-
-        <button class="almaz-btn" onclick="selectItem(429, '429 almaz - 84 000 so‘m')">
-            <span class="almaz-text">429</span>
-            <span class="almaz-price">84 000 so‘m</span>
-            <img src="images/5-almaz-icon.svg.webp" class="almaz-icon">
-        </button>
-
-        <button class="almaz-btn" onclick="selectItem(706, '706 almaz - 130 000 so‘m')">
-            <span class="almaz-text">706</span>
-            <span class="almaz-price">130 000 so‘m</span>
-            <img src="images/6-almaz-icon.svg.webp" class="almaz-icon">
-        </button>
-
-        <button class="almaz-btn" onclick="selectItem(878, '878 almaz - 156 000 so‘m')">
-            <span class="almaz-text">878</span>
-            <span class="almaz-price">156 000 so‘m</span>
-            <img src="images/6-almaz-icon.svg.webp" class="almaz-icon">
-        </button>
-
-        <button class="almaz-btn" onclick="selectItem(1412, '1412 almaz - 255 000 so‘m')">
-            <span class="almaz-text">1412</span>
-            <span class="almaz-price">255 000 so‘m</span>
-            <img src="images/7-almaz-icon.svg.webp" class="almaz-icon">
-        </button>
-
-        <button class="almaz-btn" onclick="selectItem(2195, '2195 almaz - 385 000 so‘m')">
-            <span class="almaz-text">2195</span>
-            <span class="almaz-price">385 000 so‘m</span>
-            <img src="images/7-almaz-icon.svg.webp" class="almaz-icon">
-        </button>
-
-        <button class="almaz-btn" onclick="selectItem(3688, '3688 almaz - 590 000 so‘m')">
-            <span class="almaz-text">3688</span>
-            <span class="almaz-price">590 000 so‘m</span>
-            <img src="images/8-almaz-icon.svg.webp" class="almaz-icon">
-        </button>
-
-        <button class="almaz-btn" onclick="selectItem(5532, '5532 almaz - 920 000 so‘m')">
-            <span class="almaz-text">5532</span>
-            <span class="almaz-price">920 000 so‘m</span>
-            <img src="images/8-almaz-icon.svg.webp" class="almaz-icon">
-        </button>
-
-        <button class="almaz-btn" onclick="selectItem(9288, '9288 almaz - 1 600 000 so‘m')">
-            <span class="almaz-text">9288</span>
-            <span class="almaz-price">1 600 000 so‘m</span>
-            <img src="images/9-almaz-icon.svg.webp" class="almaz-icon">
-        </button>
-
-    </div>
-</div>
-
-<script>
-    function selectItem(amount, text) {
-        let iconSrc = event.currentTarget.querySelector(".almaz-icon").src;
+        <div class="index-button-container">
+            <a href="html/main.html" class="image-button">
+                <img src="images/toplamcom.jpg">
+            </a>
+        </div>
+        <div class="index-button-container">
+            <a href="html/main.html" class="image-button">
+                <img src="images/toplamcom1.jpg">
+            </a>
+        </div>
         
-        localStorage.setItem("selectedAmount", amount);
-        localStorage.setItem("selectedText", text);
-        localStorage.setItem("selectedImage", iconSrc); // Rasmni ham saqlaymiz
-    
-        window.location.href = "id_entry.html";
-    }
-    </script>
+        <div class="new-buttons-container">
+            <a href="https://t.me/Pepaybot" class="image-button1">
+                <img src="images/games.webp" alt="Home">
+                <span class="button-text">O'yinlar</span>
+            </a>
+            
+            <a href="https://t.me/MLbb_suportbot_bot" class="image-button1">
+                <img src="images/history.webp" alt="Home">
+                <span class="button-text">Qo‘llab-quvvatlash</span>
+            </a>
+        </div>
+
+        <a href="https://t.me/MLbb_suportbot_bot" class="outset">
+            <img src="images/photosios.png" class="help-icon">
+            <span class="help-text">
+                Yordam xizmati <br>
+                <small>24/7</small>
+            </span>
+        </a>
+        
+    </div>
     
 
+    <script src="/script/script.js"></script>
 </body>
 </html>
